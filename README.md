@@ -56,10 +56,10 @@ For the examples it is assumed that you have your data in a pandas DataFrame
 # usage
 
 The usage:
-`df['duskdawn~_category'] = df.apply(lambda x: dusk_dawn_utc(datetime_utc=x['datetime_utc_column'],              
+```df['duskdawn~_category'] = df.apply(lambda x: dusk_dawn_utc(datetime_utc=x['datetime_utc_column'],              
                                      latitude_column=x['lat_column'], longitude_column=x['long_column'], 
                                      temperature_const=0, elevation_const=0, air_pressure_const=1010, twilight_const='-6',
-                                     horizon_const='-0:34', duration=False), axis=1)
+                                     horizon_const='-0:34', duration=False), axis=1)```
 
 If your data has observations of the elevation (altitude), temperature and airpressure on the location of the observation at the time of the observation these columns can be used over a const. They are not very material for the results (of by seconds).
 
@@ -67,15 +67,15 @@ If your data has observations of the elevation (altitude), temperature and airpr
 
 Inspiration for conversion to UTC
 
-`# if all timestamps in 1 zone
+```# if all timestamps in 1 zone
 local_timezone="America/New_York"
 
 #this function will create a new column with the UTC representation of the timestamp
-df["new_datetime_utc_column"]=df.apply(lambda x: convert_to_utc(datetime=x['source_datetime_column'], local_timezone=local_timezone), axis=1)`
+df["new_datetime_utc_column"]=df.apply(lambda x: convert_to_utc(datetime=x['source_datetime_column'], local_timezone=local_timezone), axis=1)```
 
 or 
 
-`#this function will create a new column with the UTC representation of the timestamp
-df["new_datetime_utc_column"]=df.apply(lambda x: convert_to_utc(datetime=x['source_datetime_column'], local_timezone=x['source_datetime_tz']), axis=1)`
+```#this function will create a new column with the UTC representation of the timestamp
+df["new_datetime_utc_column"]=df.apply(lambda x: convert_to_utc(datetime=x['source_datetime_column'], local_timezone=x['source_datetime_tz']), axis=1)```
 
 
