@@ -7,10 +7,14 @@ The dusk_dawn function will return the categories "dusk, day, dawn and night" gi
 For the examples it is assumed that you have your data in a pandas DataFrame
 
 ## function header
-`def dusk_dawn_utc (datetime_utc, latitude_column=None, longitude_column=None, temperature_column=None, elevation_column=None, 
-                   air_pressure_column=None, latitude_const='49.088964', longitude_const='20.070236', temperature_const=0,                        elevation_const=952, air_pressure_const=1010, twilight_const='-6', horizon_const='-0:34', duration=False):`
+```def dusk_dawn_utc (datetime_utc, latitude_column=None, longitude_column=None, temperature_column=None,
+                      elevation_column=None, air_pressure_column=None, latitude_const='49.088964',
+                      longitude_const='20.070236', temperature_const=0, elevation_const=952, air_pressure_const=1010,
+                      twilight_const='-6', horizon_const='-0:34', duration=False):
+```
+                   
 ## args
-`    Args:
+```    Args:
         datetime_utc,          the column name containing the UTC time of the observation
 
         If the *_column variables are not provided than it is assumed that these values are provides as constant 
@@ -51,7 +55,8 @@ For the examples it is assumed that you have your data in a pandas DataFrame
     Returns:
         a string with one of the labels "night", "dusk", "day", "dawn"
         or when duration=True 
-        returns a the label mentioned above and the duration`
+        returns a the label mentioned above and the duration
+```
 
 # usage
 
@@ -59,7 +64,8 @@ The usage:
 ```df['duskdawn~_category'] = df.apply(lambda x: dusk_dawn_utc(datetime_utc=x['datetime_utc_column'],              
                                      latitude_column=x['lat_column'], longitude_column=x['long_column'], 
                                      temperature_const=0, elevation_const=0, air_pressure_const=1010, twilight_const='-6',
-                                     horizon_const='-0:34', duration=False), axis=1)```
+                                     horizon_const='-0:34', duration=False), axis=1)
+```
 
 If your data has observations of the elevation (altitude), temperature and airpressure on the location of the observation at the time of the observation these columns can be used over a const. They are not very material for the results (of by seconds).
 
@@ -71,11 +77,13 @@ Inspiration for conversion to UTC
 local_timezone="America/New_York"
 
 #this function will create a new column with the UTC representation of the timestamp
-df["new_datetime_utc_column"]=df.apply(lambda x: convert_to_utc(datetime=x['source_datetime_column'], local_timezone=local_timezone), axis=1)```
+df["new_datetime_utc_column"]=df.apply(lambda x: convert_to_utc(datetime=x['source_datetime_column'], local_timezone=local_timezone), axis=1)
+```
 
 or 
 
 ```#this function will create a new column with the UTC representation of the timestamp
-df["new_datetime_utc_column"]=df.apply(lambda x: convert_to_utc(datetime=x['source_datetime_column'], local_timezone=x['source_datetime_tz']), axis=1)```
+df["new_datetime_utc_column"]=df.apply(lambda x: convert_to_utc(datetime=x['source_datetime_column'], local_timezone=x['source_datetime_tz']), axis=1)
+```
 
 
