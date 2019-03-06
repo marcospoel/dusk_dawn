@@ -2,11 +2,11 @@
 
 The dusk_dawn function will return the categories "dusk, day, dawn and night" given the imput parameters. It the option duration=TRUE will be used the function will also return the duration of the observation. It it is night it returns the total time of the observation "night".
 
-# assumptions
+## assumptions
 
 For the examples it is assumed that you have your data in a pandas DataFrame
 
-# function header
+## function header
 `def dusk_dawn_utc (datetime_utc, latitude_column=None, longitude_column=None, temperature_column=None, elevation_column=None, 
                    air_pressure_column=None, latitude_const='49.088964', longitude_const='20.070236', temperature_const=0,                        elevation_const=952, air_pressure_const=1010, twilight_const='-6', horizon_const='-0:34', duration=False):`
 ## args
