@@ -9,7 +9,8 @@ For the examples it is assumed that you have your data in a pandas DataFrame
 # function header
 `def dusk_dawn_utc (datetime_utc, latitude_column=None, longitude_column=None, temperature_column=None, elevation_column=None, 
                    air_pressure_column=None, latitude_const='49.088964', longitude_const='20.070236', temperature_const=0,                        elevation_const=952, air_pressure_const=1010, twilight_const='-6', horizon_const='-0:34', duration=False):`
-# args
+## args
+    Args:
         datetime_utc,          the column name containing the UTC time of the observation
 
         If the *_column variables are not provided than it is assumed that these values are provides as constant 
