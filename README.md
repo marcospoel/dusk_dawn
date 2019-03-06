@@ -5,6 +5,7 @@ The dusk_dawn function will return the categories "dusk, day, dawn and night" gi
 ## assumptions
 
 For the examples it is assumed that you have your data in a pandas DataFrame
+Python3
 
 ## function header
 ```
@@ -90,5 +91,6 @@ or
 #this function will create a new column with the UTC representation of the timestamp
 df["new_datetime_utc_column"]=df.apply(lambda x: convert_to_utc(datetime=x['source_datetime_column'], local_timezone=x['source_datetime_tz']), axis=1)
 ```
-
+# Speed
+This function and the underlaying ephem function is processing 520 rows per second on a Macbook Pro Type A1707 (Anaconda Notebook 5.7.4)
 
