@@ -72,7 +72,7 @@ df['duskdawn~_category'] = df.apply(lambda x: dusk_dawn_utc(datetime_utc=x['date
 
 If your data has observations of the elevation (altitude), temperature and airpressure on the location of the observation at the time of the observation these columns can be used over a const. They are not very material for the results (of by seconds).
 
-# bonus usage to create an UTC datetime primitive from a local timezone
+## bonus usage to create an UTC datetime primitive from a local timezone
 
 Inspiration for conversion to UTC
 
