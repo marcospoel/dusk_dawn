@@ -122,11 +122,11 @@ def dusk_dawn_utc (datetime_utc, latitude_column=None, longitude_column=None, te
     if result_lowest == "next_twilight_rise_utc":
         result="night"
     elif result_lowest == "next_sunrise_utc":
-        result = "dusk"
+        result = "dawn"
     elif result_lowest == "next_sunset_utc":
         result = "day"
     elif result_lowest == "next_twilight_set_utc":
-        result = "dawn"
+        result = "dusk"
     
     if duration:
         if result == "night":
